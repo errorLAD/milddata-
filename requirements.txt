@@ -1,3 +1,4 @@
+
 Adyen
 aiohappyeyeballs
 aiohttp
@@ -18,8 +19,6 @@ argcomplete
 arrow
 asgiref
 asn1crypto
-astroid
-asttokens
 async-timeout
 atomicwrites
 attr
@@ -28,7 +27,6 @@ Authlib
 authorizenet
 autobahn
 Automat
-autopep8
 azure-common
 azure-core
 azure-storage-blob
@@ -39,7 +37,6 @@ bcrypt
 beautifulsoup4
 billiard
 binaryornot
-black
 bleach
 blinker
 boto3
@@ -72,9 +69,7 @@ cron-descriptor
 croniter
 cryptography
 cssselect2
-customtkinter
 daphne
-darkdetect
 datamodel-code-generator
 db
 db-sqlite3
@@ -83,7 +78,6 @@ defusedxml
 Deprecated
 diff-match-patch
 dill
-distlib
 distro
 dj-database-url
 dj-email-url
@@ -93,7 +87,6 @@ django-admin-black
 django-admin-honeypot
 django-admin-thumbnails
 django-adminactions
-
 django-allauth
 django-analytical
 django-annoying
@@ -104,7 +97,6 @@ django-autocomplete-light
 django-autoslug
 django-bootstrap4
 django-braces
-django-browser-reload
 django-cache-url
 django-celery-beat
 django-celery-results
@@ -122,7 +114,6 @@ django-cryptography
 django-csp
 django-db-file-storage
 django-dbbackup
-django-debug-toolbar
 django-dotenv
 django-environ
 django-extensions
@@ -131,7 +122,6 @@ django-formset-js-improved
 django-froala-editor
 django-google-translate
 django-haystack
-
 django-import-export
 django-jazzmin
 django-jet-reboot
@@ -171,7 +161,6 @@ django-ses
 django-session-timeout
 django-simple-history
 django-social-share
-django-sslserver
 django-static-fontawesome
 django-storages
 django-taggit
@@ -202,14 +191,11 @@ enmerkar
 et-xmlfile
 example
 exceptiongroup
-executing
 expiringdict
 Faker
 fastjsonschema
 feedparser
-filelock
 firebase-admin
-flake8
 Flask
 Flask-Login
 flask-marshmallow
@@ -219,7 +205,6 @@ fonttools
 freezegun
 frozenlist
 gcloud
-
 genson
 geographiclib
 geopy
@@ -252,7 +237,6 @@ grpcio
 grpcio-status
 gunicorn
 h11
-
 html-to-draftjs
 html2text
 html5lib
@@ -270,13 +254,10 @@ inflection
 iniconfig
 instamojo-wrapper
 ipaddr
-ipython
 isodate
-isort
 itsdangerous
 jaeger-client
 jdcal
-jedi
 Jinja2
 jiter
 jmespath
@@ -286,9 +267,6 @@ jsmin
 jsonfield
 jsonschema
 jsonschema-specifications
-jupyter_client
-jupyter_core
-jupyterlab_pygments
 jwcrypto
 jws
 kombu
@@ -308,9 +286,7 @@ marshmallow
 marshmallow-sqlalchemy
 martor
 material
-matplotlib-inline
 maxminddb
-mccabe
 mdurl
 measurement
 micawber
@@ -323,9 +299,6 @@ multidict
 mypy_extensions
 mysql-connector-python
 mysqlclient
-nbclient
-nbconvert
-nbformat
 nltk
 numpy
 oauth2client
@@ -343,34 +316,28 @@ packaging
 pandas
 pandocfilters
 paramiko
-parso
 pathspec
 paytmchecksum
 pdfminer.six
 pdfplumber
 pefile
 pep517
-pep8
 petl
 phonenumbers
 phonenumberslite
-pickleshare
 pillow
-pipreqs
 platformdirs
 pluggy
 posuto
 prices
 progress
 promise
-prompt-toolkit
 proto-plus
 protobuf
 psycopg
 psycopg-binary
 psycopg2
 psycopg2-binary
-pure_eval
 py
 py-moneyed
 pyarrow
@@ -378,7 +345,6 @@ pyasn1
 pyasn1-modules
 pybars3
 pyboxen
-pycodestyle
 pycparser
 pycryptodome
 pydal
@@ -390,10 +356,7 @@ Pygments
 PyHamcrest
 pyHanko
 pyhanko-certvalidator
-pyinstaller
-pyinstaller-hooks-contrib
 PyJWT
-pylint
 PyMeta3
 PyMySQL
 PyNaCl
@@ -406,8 +369,6 @@ pypng
 Pyrebase4
 pyRFC3339
 PySocks
-pytest
-pytest-django
 python-bidi
 python-crontab
 python-dateutil
@@ -417,7 +378,6 @@ python-dotenv
 python-http-client
 python-json-logger
 python-jwt
-
 python-owasp-zap-v2.4
 python-slugify
 python3-openid
@@ -427,8 +387,6 @@ pytokens
 pytoml
 pytz
 pytz-deprecation-shim
-pywin32
-pywin32-ctypes
 PyXB
 PyYAML
 pyzmq
@@ -472,7 +430,6 @@ sortedcontainers
 soupsieve
 SQLAlchemy
 sqlparse
-stack-data
 starkbank-ecdsa
 static3
 stripe
@@ -487,9 +444,7 @@ threadloop
 thrift
 tika
 tinycss2
-tkcalendar
 tldextract
-to-requirements.txt
 toml
 tomli
 tomlkit
@@ -520,8 +475,6 @@ uuid_utils
 uvicorn
 validate-email
 vine
-virtualenv
-virtualenvwrapper-win
 vue
 Wand
 watchgod
