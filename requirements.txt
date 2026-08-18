@@ -417,8 +417,7 @@ python-dotenv
 python-http-client
 python-json-logger
 python-jwt
-python-magic
-python-magic-bin
+
 python-owasp-zap-v2.4
 python-slugify
 python3-openid
