@@ -30,6 +30,7 @@ django-ckeditor
 django-js-asset
 django-multiselectfield
 django-prices==2.3.0
+python-decouple
 PyJWT==2.0.0
 gunicorn
 idna
