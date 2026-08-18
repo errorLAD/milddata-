@@ -252,7 +252,7 @@ grpcio
 grpcio-status
 gunicorn
 h11
-heroku
+
 html-to-draftjs
 html2text
 html5lib
