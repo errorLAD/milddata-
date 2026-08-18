@@ -387,7 +387,6 @@ pytokens
 pytoml
 pytz
 pytz-deprecation-shim
-PyXB
 PyYAML
 pyzmq
 qrcode
