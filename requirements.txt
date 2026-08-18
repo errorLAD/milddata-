@@ -131,7 +131,7 @@ django-formset-js-improved
 django-froala-editor
 django-google-translate
 django-haystack
-django-heroku
+
 django-import-export
 django-jazzmin
 django-jet-reboot
