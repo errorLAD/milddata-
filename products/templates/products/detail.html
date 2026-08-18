@@ -1,0 +1,112 @@
+{% extends "base.html" %}
+
+{% block title %}{{ product.name }} — Mithila AI{% endblock %}
+
+{% block content %}
+<section class="section">
+    <div class="container product-detail">
+        <a href="{% url 'products:catalog' %}" style="color: var(--color-muted); text-decoration: none; font-size: 0.9rem;">&larr; Back to catalog</a>
+
+        <span class="badge {% if product.category == 'ai_agent' %}badge-agent{% else %}badge-saas{% endif %}" style="margin-top: 1rem;">
+            {{ product.get_category_display }}
+        </span>
+
+        <h1 style="margin: 0.75rem 0 0; color: var(--color-primary);">{{ product.name }}</h1>
+        <div class="price-large">{{ product.price_display }}</div>
+        <p style="color: var(--color-muted);">{{ product.get_billing_type_display }} payment</p>
+
+        <div style="margin: 2rem 0;">
+            <h2 style="font-size: 1.25rem; color: var(--color-primary);">Description</h2>
+            <p>{{ product.description|linebreaks }}</p>
+        </div>
+
+        {% if product.get_features_list %}
+        <div>
+            <h2 style="font-size: 1.25rem; color: var(--color-primary);">Features</h2>
+            <ul class="features-list">
+                {% for feature in product.get_features_list %}
+                <li>{{ feature }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+
+        <div class="checkout-box">
+            <h2 style="font-size: 1.15rem; margin: 0 0 1rem; color: var(--color-primary);">Buy Now</h2>
+            {% if user.is_authenticated %}
+                {% if razorpay_order %}
+                <p style="color: var(--color-muted); margin-bottom: 1rem;">Payment ready for <strong>{{ customer_email }}</strong>. Click below to complete checkout.</p>
+                <button id="rzp-button" class="btn btn-primary btn-block">Pay {{ product.price_display }}</button>
+                {% else %}
+                <p style="color: var(--color-muted); margin-bottom: 1rem;">Logged in as <strong>{{ user.email }}</strong></p>
+                <form method="post">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-primary btn-block">Proceed to Payment</button>
+                </form>
+                {% endif %}
+            {% else %}
+            <p style="color: var(--color-muted); margin-bottom: 1.25rem;">
+                You need an account to purchase AI agents and SaaS tools.
+            </p>
+            <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+                <a href="{% url 'accounts:signup' %}?next={{ request.path }}" class="btn btn-primary" style="flex: 1; min-width: 140px;">Sign Up</a>
+                <a href="{% url 'accounts:login' %}?next={{ request.path }}" class="btn btn-secondary" style="flex: 1; min-width: 140px;">Log In</a>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+{% if razorpay_order %}
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script>
+(function () {
+    var options = {
+        key: "{{ razorpay_key_id }}",
+        amount: "{{ razorpay_order.amount }}",
+        currency: "{{ razorpay_order.currency }}",
+        name: "Mithila AI",
+        description: "{{ product.name|escapejs }}",
+        order_id: "{{ razorpay_order.id }}",
+        prefill: {
+            email: "{{ customer_email|escapejs }}"
+        },
+        theme: { color: "#c05621" },
+        handler: function (response) {
+            var form = document.createElement("form");
+            form.method = "POST";
+            form.action = "{% url 'products:payment_verify' %}";
+
+            var csrf = document.createElement("input");
+            csrf.type = "hidden";
+            csrf.name = "csrfmiddlewaretoken";
+            csrf.value = "{{ csrf_token }}";
+            form.appendChild(csrf);
+
+            var fields = {
+                razorpay_payment_id: response.razorpay_payment_id,
+                razorpay_order_id: response.razorpay_order_id,
+                razorpay_signature: response.razorpay_signature
+            };
+            for (var key in fields) {
+                var input = document.createElement("input");
+                input.type = "hidden";
+                input.name = key;
+                input.value = fields[key];
+                form.appendChild(input);
+            }
+            document.body.appendChild(form);
+            form.submit();
+        }
+    };
+    var rzp = new Razorpay(options);
+    document.getElementById("rzp-button").onclick = function (e) {
+        e.preventDefault();
+        rzp.open();
+    };
+})();
+</script>
+{% endif %}
+{% endblock %}

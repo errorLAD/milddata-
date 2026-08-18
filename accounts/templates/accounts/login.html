@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}Log In — Mithila AI{% endblock %}
+
+{% block content %}
+<section class="section">
+    <div class="container">
+        <div class="form-card">
+            <h1 style="text-align: center; color: var(--color-primary); margin: 0 0 0.5rem;">Log In</h1>
+            <p style="text-align: center; color: var(--color-muted); margin: 0 0 1.5rem;">
+                Log in to purchase AI agents and SaaS tools.
+            </p>
+            <form method="post" novalidate>
+                {% csrf_token %}
+                {% for field in form %}
+                <div class="form-group">
+                    <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                    {{ field }}
+                    {% if field.errors %}
+                    <div class="form-error">{{ field.errors.0 }}</div>
+                    {% endif %}
+                </div>
+                {% endfor %}
+                {% if form.non_field_errors %}
+                <div class="form-error" style="margin-bottom: 1rem;">{{ form.non_field_errors.0 }}</div>
+                {% endif %}
+                <button type="submit" class="btn btn-primary btn-block">Log In</button>
+            </form>
+            <p style="text-align: center; margin-top: 1.25rem; color: var(--color-muted); font-size: 0.95rem;">
+                Don't have an account? <a href="{% url 'accounts:signup' %}{% if request.GET.next %}?next={{ request.GET.next }}{% endif %}" style="color: var(--color-accent);">Sign up</a>
+            </p>
+        </div>
+    </div>
+</section>
+{% endblock %}
