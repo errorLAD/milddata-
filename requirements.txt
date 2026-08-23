@@ -39,9 +39,9 @@ Pillow
 psycopg2-binary
 python3-openid
 pytz
+razorpay
 requests
 requests-oauthlib
 sqlparse
 urllib3
 whitenoise
-gunicorn
