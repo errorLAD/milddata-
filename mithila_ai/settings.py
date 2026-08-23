@@ -31,11 +31,8 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-<<<<<<< HEAD
      "whitenoise.middleware.WhiteNoiseMiddleware",
-=======
-    "whitenoise.middleware.WhiteNoiseMiddleware",
->>>>>>> b9bd41a (Fix static files for Koyeb)
+
 ]
 
 ROOT_URLCONF = "mithila_ai.urls"
