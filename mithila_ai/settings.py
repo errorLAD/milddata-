@@ -8,8 +8,18 @@ SECRET_KEY = config(
     "SECRET_KEY",
     default="django-insecure-dev-key-change-in-production",
 )
-DEBUG = config("DEBUG", default=True, cast=bool)
-ALLOWED_HOSTS = config("ALLOWED_HOSTS", default="localhost,127.0.0.1,nice-shalne-abhishekmishra-19606515.koyeb.app", cast=Csv())
+
+ALLOWED_HOSTS = [
+    "*",
+    "milddata.in",
+    "www.milddata.in",
+]
+
+CSRF_TRUSTED_ORIGINS = [
+
+    "https://milddata.in",
+]
+
 
 INSTALLED_APPS = [
     "django.contrib.admin",
