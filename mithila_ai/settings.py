@@ -3,7 +3,7 @@ from pathlib import Path
 from decouple import Csv, config
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-
+DEBUG = True
 SECRET_KEY = config(
     "SECRET_KEY",
     default="django-insecure-dev-key-change-in-production",
