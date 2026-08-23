@@ -31,7 +31,11 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+<<<<<<< HEAD
      "whitenoise.middleware.WhiteNoiseMiddleware",
+=======
+    "whitenoise.middleware.WhiteNoiseMiddleware",
+>>>>>>> b9bd41a (Fix static files for Koyeb)
 ]
 
 ROOT_URLCONF = "mithila_ai.urls"
@@ -60,7 +64,14 @@ DATABASES = {
         "NAME": BASE_DIR / "db.sqlite3",
     }
 }
-
+STORAGES = {
+    "default": {
+        "BACKEND": "django.core.files.storage.FileSystemStorage",
+    },
+    "staticfiles": {
+        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+    },
+}
 AUTH_PASSWORD_VALIDATORS = [
     {"NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator"},
     {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator"},
@@ -72,6 +83,8 @@ LANGUAGE_CODE = "en-us"
 TIME_ZONE = "Asia/Kolkata"
 USE_I18N = True
 USE_TZ = True
+
+
 STATIC_URL = "/static/"
 STATIC_ROOT = BASE_DIR / "staticfiles"
 
