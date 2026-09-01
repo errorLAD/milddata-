@@ -1,5 +1,8 @@
 from django import forms
+<<<<<<< HEAD
 from django.contrib.auth import authenticate
+=======
+>>>>>>> 496b5bca247b3229a4c9b01e2990654b44a11985
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.contrib.auth.models import User
 
@@ -35,13 +38,20 @@ class SignUpForm(UserCreationForm):
 
 
 class LoginForm(AuthenticationForm):
+<<<<<<< HEAD
     username = forms.CharField(
         label="Email or Username",
         widget=forms.TextInput(attrs={"placeholder": "demo@demo.com or username", "autofocus": True}),
+=======
+    username = forms.EmailField(
+        label="Email",
+        widget=forms.EmailInput(attrs={"placeholder": "you@company.com", "autofocus": True}),
+>>>>>>> 496b5bca247b3229a4c9b01e2990654b44a11985
     )
     password = forms.CharField(
         widget=forms.PasswordInput(attrs={"placeholder": "Your password"}),
     )
+<<<<<<< HEAD
 
     def clean(self):
         username_or_email = self.cleaned_data.get("username")
@@ -60,3 +70,5 @@ class LoginForm(AuthenticationForm):
                 self.confirm_login_allowed(self.user_cache)
 
         return self.cleaned_data
+=======
+>>>>>>> 496b5bca247b3229a4c9b01e2990654b44a11985

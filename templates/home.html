@@ -1,7 +1,11 @@
 {% extends "base.html" %}
 {% load static %}
 
+<<<<<<< HEAD
 {% block title %}Milda Data — Enterprise SaaS Applications &amp; Data Labeling Studio{% endblock %}
+=======
+{% block title %}Mithila AI — Regional Language Data & AI Tools{% endblock %}
+>>>>>>> 496b5bca247b3229a4c9b01e2990654b44a11985
 
 {% block content %}
 
@@ -33,20 +37,35 @@
         -webkit-text-fill-color: var(--ink) !important; color: var(--ink);
         text-shadow: none; mix-blend-mode: normal; opacity: 1; margin: 0;
     }
+<<<<<<< HEAD
     .annot-card h1, .annot-card h2, .annot-card h3, .annot-card h4,
     .flow-panel h1, .flow-panel h2, .flow-panel h3, .flow-panel h4,
     .cta-inner h1, .cta-inner h2, .cta-inner h3, .cta-inner h4,
     .hero-saas-showcase h1, .hero-saas-showcase h2, .hero-saas-showcase h3, .hero-saas-showcase h4,
     .dark-card h1, .dark-card h2, .dark-card h3, .dark-card h4 {
+=======
+    /* headings set inside dark panels need a light fill, not the global ink fill above */
+    .annot-card h1, .annot-card h2, .annot-card h3, .annot-card h4,
+    .flow-panel h1, .flow-panel h2, .flow-panel h3, .flow-panel h4,
+    .cta-inner h1, .cta-inner h2, .cta-inner h3, .cta-inner h4 {
+>>>>>>> 496b5bca247b3229a4c9b01e2990654b44a11985
         -webkit-text-fill-color: #f3f4f8 !important; color: #f3f4f8;
     }
     .mith a { text-decoration: none; }
     .mith .container { max-width: 1180px; margin: 0 auto; padding: 0 1.75rem; }
 
+<<<<<<< HEAD
     .thread {
         height: 4px;
         width: 100%;
         background: linear-gradient(90deg, var(--indigo-bright) 0 33.3%, var(--marigold) 33.3% 66.6%, var(--sindoor) 66.6% 100%);
+=======
+    /* ---------- brand rule: three pigment threads, not decoration for its own sake ---------- */
+    .thread {
+        height: 3px;
+        width: 100%;
+        background: linear-gradient(90deg, var(--indigo) 0 33.3%, var(--marigold) 33.3% 66.6%, var(--sindoor) 66.6% 100%);
+>>>>>>> 496b5bca247b3229a4c9b01e2990654b44a11985
     }
 
     .eyebrow {
@@ -54,18 +73,29 @@
         align-items: center;
         gap: 0.6rem;
         font-family: var(--font-mono);
+<<<<<<< HEAD
         font-size: 0.76rem;
         font-weight: 600;
         letter-spacing: 0.08em;
         text-transform: uppercase;
         color: var(--indigo-bright);
+=======
+        font-size: 0.72rem;
+        font-weight: 500;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--indigo);
+>>>>>>> 496b5bca247b3229a4c9b01e2990654b44a11985
     }
     .eyebrow::before {
         content: "";
         width: 6px; height: 6px;
         background: var(--marigold);
         display: inline-block;
+<<<<<<< HEAD
         border-radius: 50%;
+=======
+>>>>>>> 496b5bca247b3229a4c9b01e2990654b44a11985
     }
     .eyebrow .dev {
         font-family: var(--font-dev);
@@ -76,16 +106,25 @@
         font-size: 0.85rem;
     }
 
+<<<<<<< HEAD
     .top-strip {
         border-bottom: 1px solid var(--line);
         background: var(--surface);
         padding: 0.6rem 0;
+=======
+    /* ---------- nav-adjacent top strip ---------- */
+    .top-strip {
+        border-bottom: 1px solid var(--line);
+        background: var(--surface);
+        padding: 0.55rem 0;
+>>>>>>> 496b5bca247b3229a4c9b01e2990654b44a11985
     }
     .top-strip .container {
         display: flex;
         justify-content: space-between;
         align-items: center;
         font-family: var(--font-mono);
+<<<<<<< HEAD
         font-size: 0.75rem;
         color: var(--ink-soft);
         letter-spacing: 0.02em;
@@ -94,51 +133,96 @@
 
     .hero {
         padding: 4.5rem 0 5rem;
+=======
+        font-size: 0.72rem;
+        color: var(--ink-soft);
+        letter-spacing: 0.02em;
+    }
+    .top-strip span strong { color: var(--ink); font-weight: 600; }
+
+    /* ---------- Hero ---------- */
+    .hero {
+        padding: 4rem 0 4.5rem;
+>>>>>>> 496b5bca247b3229a4c9b01e2990654b44a11985
         background: var(--paper);
         position: relative;
     }
 
     .hero-grid {
         display: grid;
+<<<<<<< HEAD
         grid-template-columns: 1.05fr 0.95fr;
         gap: 3.5rem;
         align-items: center;
+=======
+        grid-template-columns: 1.02fr 0.98fr;
+        gap: 3.5rem;
+        align-items: start;
+>>>>>>> 496b5bca247b3229a4c9b01e2990654b44a11985
     }
 
     .hero-copy h1 {
         margin: 1.2rem 0 1.15rem;
         font-family: var(--font-display);
+<<<<<<< HEAD
         font-size: clamp(2.6rem, 4.3vw, 3.8rem);
         line-height: 1.05;
         font-weight: 700;
+=======
+        font-size: clamp(2.5rem, 4.1vw, 3.6rem);
+        line-height: 1.05;
+        font-weight: 600;
+>>>>>>> 496b5bca247b3229a4c9b01e2990654b44a11985
         letter-spacing: -0.02em;
         color: var(--ink);
     }
 
+<<<<<<< HEAD
     .hero-copy h1 .accent { color: var(--indigo-bright); -webkit-text-fill-color: var(--indigo-bright); font-style: normal; }
 
     .hero-copy .lead {
         max-width: 540px;
         margin: 0;
         font-size: 1.1rem;
+=======
+    .hero-copy h1 .accent { font-style: italic; color: var(--indigo); -webkit-text-fill-color: var(--indigo); font-weight: 500; }
+
+    .hero-copy .lead {
+        max-width: 520px;
+        margin: 0;
+        font-size: 1.08rem;
+>>>>>>> 496b5bca247b3229a4c9b01e2990654b44a11985
         line-height: 1.68;
         color: var(--ink-soft);
     }
 
+<<<<<<< HEAD
     .hero-actions { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2.2rem; align-items: center; }
+=======
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 0.9rem; margin-top: 2.2rem; }
+>>>>>>> 496b5bca247b3229a4c9b01e2990654b44a11985
 
     .btn {
         display: inline-flex;
         align-items: center;
+<<<<<<< HEAD
         gap: 0.55rem;
         padding: 0.9rem 1.6rem;
         border-radius: 8px;
         font-weight: 700;
         font-size: 0.95rem;
+=======
+        gap: 0.5rem;
+        padding: 0.85rem 1.4rem;
+        border-radius: 8px;
+        font-weight: 700;
+        font-size: 0.92rem;
+>>>>>>> 496b5bca247b3229a4c9b01e2990654b44a11985
         letter-spacing: -0.005em;
         font-family: var(--font-body);
         border: 1px solid transparent;
         cursor: pointer;
+<<<<<<< HEAD
         transition: all 0.18s ease;
     }
     .btn-primary { background: var(--ink); color: #fdfdfb; }
@@ -147,17 +231,31 @@
     .btn-secondary:hover { border-color: var(--ink); background: var(--paper); }
     .btn-accent { background: var(--marigold); color: var(--ink); border-color: var(--marigold); }
     .btn-accent:hover { background: #c27d22; color: var(--ink); }
+=======
+    }
+    .btn-primary { background: var(--ink); color: #fdfdfb; }
+    .btn-primary:hover { background: var(--indigo); }
+    .btn-secondary { background: transparent; color: var(--ink); border-color: var(--line); }
+    .btn-secondary:hover { border-color: var(--ink); }
+>>>>>>> 496b5bca247b3229a4c9b01e2990654b44a11985
 
     .service-split {
         display: grid;
         grid-template-columns: repeat(2, minmax(0,1fr));
+<<<<<<< HEAD
         gap: 0.85rem;
         margin-top: 2.4rem;
         max-width: 540px;
+=======
+        gap: 0.75rem;
+        margin-top: 2.4rem;
+        max-width: 520px;
+>>>>>>> 496b5bca247b3229a4c9b01e2990654b44a11985
     }
     .split-item {
         border: 1px solid var(--line);
         border-radius: 10px;
+<<<<<<< HEAD
         padding: 0.95rem 1.1rem;
         background: var(--surface);
         transition: border-color 0.15s ease;
@@ -247,6 +345,109 @@
         background: #e6a04e;
     }
 
+=======
+        padding: 0.85rem 1rem;
+        background: var(--surface);
+    }
+    .split-item .k { display:block; font-family: var(--font-mono); font-size: 0.68rem; color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.3rem; }
+    .split-item .v { font-family: var(--font-display); font-size: 1.02rem; font-weight: 600; color: var(--ink); }
+
+    /* ---------- Hero panel: an actual annotation-tool mockup, the page's signature element ---------- */
+    .annot-card {
+        background: var(--ink);
+        border-radius: 16px;
+        padding: 1.3rem 1.3rem 1.5rem;
+        box-shadow: 0 30px 60px rgba(11, 15, 26, 0.22);
+        border: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .annot-topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-bottom: 1rem;
+        margin-bottom: 1.1rem;
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .annot-topbar .file {
+        font-family: var(--font-mono);
+        font-size: 0.72rem;
+        color: #9aa1b8;
+    }
+    .annot-topbar .badge {
+        font-family: var(--font-mono);
+        font-size: 0.66rem;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: #7fd9ac;
+        background: rgba(127, 217, 172, 0.12);
+        border: 1px solid rgba(127, 217, 172, 0.25);
+        padding: 0.25rem 0.5rem;
+        border-radius: 5px;
+    }
+
+    /* waveform */
+    .waveform {
+        display: flex;
+        align-items: flex-end;
+        gap: 2px;
+        height: 56px;
+        padding: 0 0.1rem;
+        margin-bottom: 0.6rem;
+    }
+    .waveform span {
+        flex: 1;
+        background: #454d68;
+        border-radius: 2px;
+        min-height: 3px;
+    }
+    .waveform span.active { background: var(--marigold); }
+
+    .time-ruler {
+        display: flex;
+        justify-content: space-between;
+        font-family: var(--font-mono);
+        font-size: 0.62rem;
+        color: #6b7290;
+        margin-bottom: 1.15rem;
+    }
+
+    .transcript-lines { display: grid; gap: 0.55rem; margin-bottom: 1.2rem; }
+    .t-line {
+        display: flex;
+        align-items: baseline;
+        gap: 0.65rem;
+        font-size: 0.86rem;
+        line-height: 1.5;
+    }
+    .t-line .stamp { font-family: var(--font-mono); font-size: 0.66rem; color: #6b7290; flex-shrink: 0; width: 42px; }
+    .t-line .txt { color: #e7e9f2; font-family: var(--font-dev); font-size: 0.98rem; }
+    .t-line .txt.eng { font-family: var(--font-body); font-weight: 500; }
+    .tag {
+        font-family: var(--font-mono);
+        font-size: 0.62rem;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        padding: 0.14rem 0.4rem;
+        border-radius: 4px;
+        margin-left: 0.2rem;
+    }
+    .tag.mai { background: rgba(79,70,229,0.18); color: #a5b4fc; }
+    .tag.hin { background: rgba(217,142,43,0.18); color: #f0c583; }
+    .tag.eng { background: rgba(63,122,92,0.18); color: #8fd1ac; }
+
+    .annot-footer {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0,1fr));
+        gap: 0.6rem;
+        padding-top: 1rem;
+        border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .annot-stat .k { font-family: var(--font-mono); font-size: 0.64rem; color: #6b7290; text-transform: uppercase; letter-spacing: 0.05em; display:block; margin-bottom: 0.2rem; }
+    .annot-stat .v { font-family: var(--font-display); font-size: 1.15rem; color: #f3f4f8; font-weight: 600; }
+
+    /* ---------- Logo / language bar ---------- */
+>>>>>>> 496b5bca247b3229a4c9b01e2990654b44a11985
     .lang-bar { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--surface); }
     .lang-bar .container {
         display: flex;
@@ -255,11 +456,16 @@
         gap: 0.8rem;
         padding: 1.1rem 1.75rem;
         font-family: var(--font-mono);
+<<<<<<< HEAD
         font-size: 0.75rem;
+=======
+        font-size: 0.72rem;
+>>>>>>> 496b5bca247b3229a4c9b01e2990654b44a11985
         letter-spacing: 0.05em;
         text-transform: uppercase;
         color: var(--ink-soft);
     }
+<<<<<<< HEAD
     .lang-bar span b { color: var(--ink); font-weight: 700; }
 
     .section { padding: 5.5rem 0; }
@@ -369,6 +575,77 @@
     }
 
     .path-cards { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 1.5rem; }
+=======
+    .lang-bar span b { color: var(--ink); font-weight: 600; }
+
+    /* ---------- Sections ---------- */
+    .section { padding: 5.5rem 0; }
+    .section.alt { background: var(--surface); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+
+    .section-header { max-width: 620px; margin: 0 0 3rem; }
+    .section-header .eyebrow { margin-bottom: 0.9rem; }
+    .section-header h2 {
+        font-family: var(--font-display);
+        font-size: clamp(1.9rem, 2.7vw, 2.5rem);
+        line-height: 1.18;
+        letter-spacing: -0.01em;
+        font-weight: 600;
+        color: var(--ink);
+    }
+    .section-header p { margin: 1rem 0 0; color: var(--ink-soft); font-size: 1.02rem; line-height: 1.68; max-width: 540px; }
+
+    /* feature grid */
+    .feature-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+    .feature-card { background: var(--surface); padding: 2.1rem 1.8rem; }
+    .feature-card .num { font-family: var(--font-mono); font-size: 0.72rem; color: var(--marigold); letter-spacing: 0.05em; }
+    .feature-card h3 {
+        margin: 0.9rem 0 0.6rem;
+        font-family: var(--font-display);
+        color: var(--ink);
+        font-size: 1.22rem;
+        font-weight: 600;
+        letter-spacing: -0.01em;
+    }
+    .feature-card p { margin: 0; color: var(--ink-soft); line-height: 1.65; font-size: 0.94rem; }
+
+    /* workflow */
+    .flow-wrap { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 1.25rem; align-items: stretch; }
+
+    .flow-panel {
+        background: var(--ink);
+        border-radius: 14px;
+        padding: 2rem 2.1rem;
+    }
+    .flow-panel h3 { color: #f3f4f8; margin: 0 0 1.4rem; font-family: var(--font-display); font-size: 1.28rem; font-weight: 600; }
+
+    .flow-list { display: grid; gap: 1.15rem; }
+    .flow-item { display: flex; gap: 1rem; align-items: flex-start; }
+    .flow-item .n {
+        font-family: var(--font-mono);
+        font-size: 0.78rem;
+        color: var(--marigold);
+        width: 22px;
+        flex-shrink: 0;
+        padding-top: 0.15rem;
+    }
+    .flow-item h4 { margin: 0 0 0.25rem; color: #f3f4f8; font-size: 0.98rem; font-weight: 700; }
+    .flow-item p { margin: 0; color: #9aa1b8; line-height: 1.6; font-size: 0.9rem; }
+
+    .stat-panel {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 2rem;
+    }
+    .stat-panel h3 { margin: 0 0 1.2rem; font-family: var(--font-display); font-size: 1.28rem; font-weight: 600; color: var(--ink); }
+    .stat-rows { display: grid; gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+    .stat-row { display: flex; justify-content: space-between; align-items: baseline; padding: 0.95rem 1.05rem; background: var(--paper); }
+    .stat-row span { color: var(--ink-soft); font-size: 0.88rem; }
+    .stat-row strong { font-family: var(--font-mono); color: var(--ink); font-size: 1.05rem; font-weight: 600; }
+
+    /* path cards */
+    .path-cards { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 1.25rem; }
+>>>>>>> 496b5bca247b3229a4c9b01e2990654b44a11985
     .path-card {
         display: block;
         background: var(--surface);
@@ -377,6 +654,7 @@
         padding: 2.3rem;
         color: var(--ink);
         transition: border-color 0.18s ease, transform 0.18s ease;
+<<<<<<< HEAD
     }
     .path-card.featured {
         border-color: var(--indigo-bright);
@@ -392,11 +670,32 @@
     .path-card p { margin: 0 0 1.4rem; color: var(--ink-soft); line-height: 1.68; font-size: 0.96rem; }
     .path-cta { font-weight: 700; color: var(--indigo-bright); font-size: 0.9rem; font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.04em; }
 
+=======
+        position: relative;
+    }
+    .path-card:hover { transform: translateY(-3px); border-color: var(--indigo); }
+    .path-card .eyebrow { margin-bottom: 1.1rem; }
+    .path-card h2 {
+        font-family: var(--font-display);
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin: 0 0 0.65rem;
+        letter-spacing: -0.01em;
+    }
+    .path-card p { margin: 0 0 1.4rem; color: var(--ink-soft); line-height: 1.68; font-size: 0.95rem; }
+    .path-cta { font-weight: 700; color: var(--indigo); font-size: 0.9rem; font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.04em; }
+
+    /* cta */
+>>>>>>> 496b5bca247b3229a4c9b01e2990654b44a11985
     .cta-band { padding: 0 0 5.5rem; }
     .cta-inner {
         background: var(--ink);
         border-radius: 16px;
+<<<<<<< HEAD
         padding: 3rem 2.8rem;
+=======
+        padding: 2.8rem 2.6rem;
+>>>>>>> 496b5bca247b3229a4c9b01e2990654b44a11985
         color: #f3f4f8;
         display: flex;
         align-items: center;
@@ -406,6 +705,7 @@
     .cta-inner h2 {
         margin: 0 0 0.5rem;
         font-family: var(--font-display);
+<<<<<<< HEAD
         font-size: clamp(1.6rem, 2.4vw, 2.1rem);
         font-weight: 700;
     }
@@ -414,6 +714,26 @@
     @media (max-width: 980px) {
         .hero-grid, .path-cards { grid-template-columns: 1fr; }
         .cta-inner { flex-direction: column; align-items: flex-start; }
+=======
+        font-size: clamp(1.55rem, 2.2vw, 2rem);
+        font-weight: 600;
+        letter-spacing: -0.01em;
+    }
+    .cta-inner p { margin: 0; color: #9aa1b8; font-size: 0.98rem; }
+    .cta-inner .btn-primary { background: var(--marigold); color: var(--ink); }
+    .cta-inner .btn-primary:hover { background: #e6a04e; }
+
+    @media (max-width: 980px) {
+        .hero-grid, .flow-wrap, .feature-grid, .path-cards { grid-template-columns: 1fr; }
+        .feature-grid { background: var(--line); }
+        .cta-inner { flex-direction: column; align-items: flex-start; }
+        .service-split { max-width: none; }
+    }
+    @media (max-width: 640px) {
+        .top-strip .container { flex-direction: column; align-items: flex-start; gap: 0.3rem; }
+        .lang-bar .container { justify-content: flex-start; }
+        .annot-footer { grid-template-columns: 1fr 1fr; }
+>>>>>>> 496b5bca247b3229a4c9b01e2990654b44a11985
     }
 </style>
 
@@ -422,14 +742,20 @@
 
 <div class="top-strip">
     <div class="container">
+<<<<<<< HEAD
         <span>Milda Data <strong>·</strong> SaaS Store &amp; B2B Data Labeling Studio</span>
         <span><strong>7 SaaS Products</strong> &nbsp;/&nbsp; <strong>200k+</strong> Labeled Audio Hours</span>
+=======
+        <span>Darbhanga, Bihar <strong>·</strong> Two services, one language stack</span>
+        <span><strong>200k+</strong> labeled hours &nbsp;/&nbsp; <strong>180</strong> native speakers</span>
+>>>>>>> 496b5bca247b3229a4c9b01e2990654b44a11985
     </div>
 </div>
 
 <section class="hero">
     <div class="container hero-grid">
         <div class="hero-copy">
+<<<<<<< HEAD
             <span class="eyebrow">{{ cms_hero.badge|default:'Milda Data' }} <span class="dev">मिथिला</span></span>
             <h1>{{ cms_hero.heading|default:'Enterprise <span class="accent">SaaS Applications</span> &amp; Data Labeling Studio'|safe }}</h1>
             <p class="lead">{{ cms_hero.description|default:'Discover and launch ready-to-use SaaS applications for business operations, logistics, vendor onboarding, and payments — plus expert B2B Maithili, Hindi, and English data labeling for AI models.' }}</p>
@@ -447,11 +773,31 @@
                 <div class="split-item">
                     <span class="k">Service 02 · Custom Dataset</span>
                     <span class="v">Data Labeling Studio</span>
+=======
+            <span class="eyebrow">MildData <span class="dev">मिथिला</span></span>
+            <h1>Two services. <span class="accent">Get</span> your data labeled, or buy an AI/Saas app.</h1>
+            <p class="lead">MildData runs two separate, independent services. <strong>Service 01</strong> is a B2B studio that labels audio, text, and language data with native Maithili, Hindi, and English speakers, priced by quote. <strong>Service 02</strong> is an open AI &amp; SaaS app store — anyone can browse and buy a ready-made app directly, no data project required.</p>
+
+            <div class="hero-actions">
+                <a href="{% url 'labeling:home' %}" class="btn btn-primary">Request a labeling quote</a>
+                <a href="{% url 'products:catalog' %}" class="btn btn-secondary">Buy an AI/SaaS application</a>
+            </div>
+
+            <div class="service-split">
+                <div class="split-item">
+                    <span class="k">Service 01 · B2B quote</span>
+                    <span class="v">Data Labeling Studio</span>
+                </div>
+                <div class="split-item">
+                    <span class="k">Service 02 · Buy now</span>
+                    <span class="v">AI/SaaS App Store</span>
+>>>>>>> 496b5bca247b3229a4c9b01e2990654b44a11985
                 </div>
             </div>
         </div>
 
         <div class="hero-panel">
+<<<<<<< HEAD
             <div class="hero-saas-showcase">
                 <div class="hss-header">
                     <span class="hss-title">Featured Applications</span>
@@ -488,11 +834,47 @@
                         <a href="{% url 'products:saas_launch' 'stockflow' %}" class="hss-launch-btn">Launch →</a>
                     </div>
                 </div>
+=======
+            <div class="annot-card">
+                <div class="annot-topbar">
+                    <span class="file">session_0142.wav — darbhanga_call_center</span>
+                    <span class="badge">QA passed</span>
+                </div>
+
+                <div class="waveform" aria-hidden="true">
+                    <span style="height:22%"></span><span style="height:38%"></span><span style="height:60%" class="active"></span><span style="height:44%" class="active"></span><span style="height:70%" class="active"></span><span style="height:30%"></span><span style="height:52%"></span><span style="height:80%" class="active"></span><span style="height:36%"></span><span style="height:58%" class="active"></span><span style="height:26%"></span><span style="height:44%"></span><span style="height:66%" class="active"></span><span style="height:20%"></span><span style="height:48%"></span><span style="height:74%" class="active"></span><span style="height:34%"></span><span style="height:54%"></span><span style="height:28%"></span><span style="height:62%" class="active"></span><span style="height:40%"></span><span style="height:56%" class="active"></span><span style="height:24%"></span><span style="height:46%"></span><span style="height:32%"></span><span style="height:68%" class="active"></span><span style="height:30%"></span><span style="height:50%"></span><span style="height:76%" class="active"></span><span style="height:38%"></span><span style="height:42%"></span>
+                </div>
+                <div class="time-ruler">
+                    <span>00:00</span><span>00:08</span><span>00:16</span><span>00:24</span>
+                </div>
+
+                <div class="transcript-lines">
+                    <div class="t-line">
+                        <span class="stamp">00:04</span>
+                        <span class="txt">अहाँ के की सहायता कऽ सकैत छी<span class="tag mai">MAI</span></span>
+                    </div>
+                    <div class="t-line">
+                        <span class="stamp">00:09</span>
+                        <span class="txt">आपका ऑर्डर की स्थिति बताइए<span class="tag hin">HIN</span></span>
+                    </div>
+                    <div class="t-line">
+                        <span class="stamp">00:15</span>
+                        <span class="txt eng">Ship it to the Darbhanga branch<span class="tag eng">ENG</span></span>
+                    </div>
+                </div>
+
+                <div class="annot-footer">
+                    <div class="annot-stat"><span class="k">Speakers</span><span class="v">180</span></div>
+                    <div class="annot-stat"><span class="k">Accuracy</span><span class="v">96%</span></div>
+                    <div class="annot-stat"><span class="k">Turnaround</span><span class="v">2–4 wk</span></div>
+                </div>
+>>>>>>> 496b5bca247b3229a4c9b01e2990654b44a11985
             </div>
         </div>
     </div>
 </section>
 
+<<<<<<< HEAD
 <!-- SECTION 1: SAAS PRODUCTS STORE -->
 <section class="section">
     <div class="container">
@@ -540,10 +922,47 @@
 
         <div style="text-align: center; margin-top: 2.5rem;">
             <a href="{% url 'products:saas_directory' %}" class="btn btn-accent" style="padding: 0.9rem 2.2rem;">View Full SaaS Directory &amp; All Products →</a>
+=======
+<section class="lang-bar">
+    <div class="container">
+        <span><b>Maithili</b> annotation</span>
+        <span><b>Hindi</b> transcription</span>
+        <span><b>English</b> code-switch</span>
+        <span><b>Audio</b> labeling</span>
+        <span><b>Text</b> tagging</span>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="section-header">
+            <span class="eyebrow">Why teams choose us</span>
+            <h2>Purpose-built for multilingual AI in Indian markets.</h2>
+            <p>We combine human expertise, language-specific data pipelines, and deployable tools to turn regional-language complexity into business advantage.</p>
+        </div>
+
+        <div class="feature-grid">
+            <div class="feature-card">
+                <span class="num">01</span>
+                <h3>Native-speaker quality</h3>
+                <p>Every transcript, tag, and annotation is reviewed by people who speak the language as a first language, not by generic crowd sources.</p>
+            </div>
+            <div class="feature-card">
+                <span class="num">02</span>
+                <h3>Trilingual by default</h3>
+                <p>We work across Maithili, Hindi, and English so your models learn the real mix of expression, switching, and intent your customers use every day.</p>
+            </div>
+            <div class="feature-card">
+                <span class="num">03</span>
+                <h3>Data to deployment</h3>
+                <p>Use your labeled data directly, or buy one of the AI agents and SaaS tools already trained on the same high-quality language stack.</p>
+            </div>
+>>>>>>> 496b5bca247b3229a4c9b01e2990654b44a11985
         </div>
     </div>
 </section>
 
+<<<<<<< HEAD
 <!-- SECTION 2: B2B DATA LABELING STUDIO -->
 <section class="section alt">
     <div class="container">
@@ -575,10 +994,58 @@
 
         <div style="text-align: center; margin-top: 2.5rem;">
             <a href="{% url 'labeling:home' %}" class="btn btn-primary" style="padding: 0.9rem 2.2rem;">Request a Custom Labeling Quote →</a>
+=======
+<section class="section alt">
+    <div class="container">
+        <div class="section-header">
+            <span class="eyebrow">How it works</span>
+            <h2>From language brief to launch-ready output.</h2>
+            <p>We make the operating model simple: scope the problem, collect quality data, and hand you something your product team can actually use.</p>
+        </div>
+
+        <div class="flow-wrap">
+            <div class="flow-panel">
+                <h3>Product workflow</h3>
+                <div class="flow-list">
+                    <div class="flow-item">
+                        <span class="n">01</span>
+                        <div>
+                            <h4>Define use case</h4>
+                            <p>Tell us the language, workflow, and target output you need for training or deployment.</p>
+                        </div>
+                    </div>
+                    <div class="flow-item">
+                        <span class="n">02</span>
+                        <div>
+                            <h4>Label with native experts</h4>
+                            <p>We collect voice, text, or annotation tasks through a quality-controlled Bihar-based network.</p>
+                        </div>
+                    </div>
+                    <div class="flow-item">
+                        <span class="n">03</span>
+                        <div>
+                            <h4>Ship your dataset</h4>
+                            <p>Take delivery of your labeled dataset, ready to plug into your own models and pipelines.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stat-panel">
+                <h3>Real outcomes</h3>
+                <div class="stat-rows">
+                    <div class="stat-row"><span>Dataset turnaround</span><strong>2–4 weeks</strong></div>
+                    <div class="stat-row"><span>Native coverage</span><strong>6+ dialects</strong></div>
+                    <div class="stat-row"><span>Launch support</span><strong>End-to-end</strong></div>
+                    <div class="stat-row"><span>Best fit</span><strong>B2B / SaaS</strong></div>
+                </div>
+            </div>
+>>>>>>> 496b5bca247b3229a4c9b01e2990654b44a11985
         </div>
     </div>
 </section>
 
+<<<<<<< HEAD
 <!-- SECTION 3: CORE PATHWAYS -->
 <section class="section">
     <div class="container">
@@ -598,6 +1065,26 @@
                 <h2>Data Labeling Studio</h2>
                 <p>For AI teams training custom models. Quote-based audio transcription, annotation, and trilingual dataset creation in Maithili, Hindi, and English.</p>
                 <span class="path-cta">Request a Labeling Quote →</span>
+=======
+<section class="section">
+    <div class="container">
+        <div class="section-header" style="margin-bottom: 2.2rem;">
+            <span class="eyebrow">Two separate services</span>
+            <h2>We don't do one thing. Pick the one you need.</h2>
+        </div>
+        <div class="path-cards">
+            <a href="{% url 'labeling:home' %}" class="path-card">
+                <span class="eyebrow">Service 01 · B2B, by quote</span>
+                <h2>Data Labeling Studio</h2>
+                <p>For companies training their own models. Quote-based labeling for audio transcription, annotation, and trilingual dataset creation in Maithili and regional languages.</p>
+                <span class="path-cta">Request a quote →</span>
+            </a>
+            <a href="{% url 'products:catalog' %}" class="path-card">
+                <span class="eyebrow">Service 02 · Open to anyone</span>
+                <h2>AI/SaaS App Store</h2>
+                <p>For anyone who wants a ready-made tool. Browse independent AI and SaaS apps built for Indian language workflows, and buy directly — no quote, no data project.</p>
+                <span class="path-cta">Browse &amp; buy apps →</span>
+>>>>>>> 496b5bca247b3229a4c9b01e2990654b44a11985
             </a>
         </div>
     </div>
@@ -606,6 +1093,7 @@
 <section class="cta-band">
     <div class="container cta-inner">
         <div>
+<<<<<<< HEAD
             <h2>Ready to launch a SaaS app or start a data labeling project?</h2>
             <p>Explore our full directory of SaaS applications or talk to our team for a custom dataset quote.</p>
         </div>
@@ -613,6 +1101,12 @@
             <a href="{% url 'products:saas_directory' %}" class="btn btn-accent">SaaS Store</a>
             <a href="{% url 'labeling:home' %}" class="btn btn-secondary" style="color: #ffffff; border-color: rgba(255,255,255,0.3);">Labeling Quote</a>
         </div>
+=======
+            <h2>Building a model that understands Bihar and beyond?</h2>
+            <p>Tell us what you're training and we'll scope a sample dataset, workflow, and quote.</p>
+        </div>
+        <a href="{% url 'labeling:home' %}" class="btn btn-primary">Request a quote</a>
+>>>>>>> 496b5bca247b3229a4c9b01e2990654b44a11985
     </div>
 </section>
 

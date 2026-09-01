@@ -98,7 +98,17 @@ body {
 }
 
 .logo::before {
+<<<<<<< HEAD
     display: none !important;
+=======
+    content: '';
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: var(--color-primary);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--color-primary);
+>>>>>>> 496b5bca247b3229a4c9b01e2990654b44a11985
 }
 
 .logo-img {
@@ -819,6 +829,7 @@ main {
 .messages { padding-top: 1.5rem; }
 
 .alert {
+<<<<<<< HEAD
     padding: 0.9rem 1.25rem;
     border-radius: var(--radius-sm);
     margin-bottom: 1rem;
@@ -849,6 +860,32 @@ main {
     background: #e0e7ff; 
     color: #3730a3; 
     border: 1px solid #c7d2fe;
+=======
+    padding: 1rem 1.25rem;
+    border-radius: var(--radius-sm);
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 1px solid transparent;
+}
+
+.alert-success { 
+    background: rgba(16, 185, 129, 0.1); 
+    color: #34d399; 
+    border-color: rgba(16, 185, 129, 0.25);
+}
+.alert-error { 
+    background: rgba(239, 68, 68, 0.1); 
+    color: #f87171; 
+    border-color: rgba(239, 68, 68, 0.25);
+}
+.alert-info { 
+    background: rgba(99, 102, 241, 0.1); 
+    color: #a5b4fc; 
+    border-color: rgba(99, 102, 241, 0.25);
+>>>>>>> 496b5bca247b3229a4c9b01e2990654b44a11985
 }
 
 /* Product catalog */

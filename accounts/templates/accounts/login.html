@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 
+<<<<<<< HEAD
 {% block title %}Log In — Milda Data{% endblock %}
+=======
+{% block title %}Log In — Mithila AI{% endblock %}
+>>>>>>> 496b5bca247b3229a4c9b01e2990654b44a11985
 
 {% block content %}
 <section class="section">
@@ -8,6 +12,7 @@
         <div class="form-card">
             <h1 style="text-align: center; color: var(--color-primary); margin: 0 0 0.5rem;">Log In</h1>
             <p style="text-align: center; color: var(--color-muted); margin: 0 0 1.5rem;">
+<<<<<<< HEAD
                 Log in to access your products and full features.
             </p>
 
@@ -20,6 +25,11 @@
             </div>
 
             <form method="post" id="login-form" novalidate>
+=======
+                Log in to purchase AI agents and SaaS tools.
+            </p>
+            <form method="post" novalidate>
+>>>>>>> 496b5bca247b3229a4c9b01e2990654b44a11985
                 {% csrf_token %}
                 {% for field in form %}
                 <div class="form-group">
@@ -35,6 +45,7 @@
                 {% endif %}
                 <button type="submit" class="btn btn-primary btn-block">Log In</button>
             </form>
+<<<<<<< HEAD
 
             <div style="margin: 1.5rem 0; text-align: center; position: relative;">
                 <hr style="border: 0; border-top: 1px solid #e5e7eb;">
@@ -45,12 +56,15 @@
                 ⚡ Continue as Guest (Public Preview)
             </a>
 
+=======
+>>>>>>> 496b5bca247b3229a4c9b01e2990654b44a11985
             <p style="text-align: center; margin-top: 1.25rem; color: var(--color-muted); font-size: 0.95rem;">
                 Don't have an account? <a href="{% url 'accounts:signup' %}{% if request.GET.next %}?next={{ request.GET.next }}{% endif %}" style="color: var(--color-accent);">Sign up</a>
             </p>
         </div>
     </div>
 </section>
+<<<<<<< HEAD
 
 <script>
 document.addEventListener('DOMContentLoaded', function(){
@@ -64,4 +78,6 @@ document.addEventListener('DOMContentLoaded', function(){
     });
 });
 </script>
+=======
+>>>>>>> 496b5bca247b3229a4c9b01e2990654b44a11985
 {% endblock %}

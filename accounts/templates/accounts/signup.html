@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 
+<<<<<<< HEAD
 {% block title %}Sign Up — Milda Data{% endblock %}
+=======
+{% block title %}Sign Up — Mithila AI{% endblock %}
+>>>>>>> 496b5bca247b3229a4c9b01e2990654b44a11985
 
 {% block content %}
 <section class="section">
@@ -8,7 +12,11 @@
         <div class="form-card">
             <h1 style="text-align: center; color: var(--color-primary); margin: 0 0 0.5rem;">Create Account</h1>
             <p style="text-align: center; color: var(--color-muted); margin: 0 0 1.5rem;">
+<<<<<<< HEAD
                 Sign up to access products and full features.
+=======
+                Sign up to buy AI agents and SaaS tools.
+>>>>>>> 496b5bca247b3229a4c9b01e2990654b44a11985
             </p>
             <form method="post" novalidate>
                 {% csrf_token %}
@@ -29,6 +37,7 @@
                 {% endfor %}
                 <button type="submit" class="btn btn-primary btn-block">Sign Up</button>
             </form>
+<<<<<<< HEAD
 
             <div style="margin: 1.5rem 0; text-align: center; position: relative;">
                 <hr style="border: 0; border-top: 1px solid #e5e7eb;">
@@ -39,6 +48,8 @@
                 ⚡ Continue as Guest (Public Preview)
             </a>
 
+=======
+>>>>>>> 496b5bca247b3229a4c9b01e2990654b44a11985
             <p style="text-align: center; margin-top: 1.25rem; color: var(--color-muted); font-size: 0.95rem;">
                 Already have an account? <a href="{% url 'accounts:login' %}{% if request.GET.next %}?next={{ request.GET.next }}{% endif %}" style="color: var(--color-accent);">Log in</a>
             </p>

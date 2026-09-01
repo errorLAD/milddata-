@@ -3,13 +3,32 @@ from pathlib import Path
 from decouple import Csv, config
 
 BASE_DIR = Path(__file__).resolve().parent.parent
+<<<<<<< HEAD
 
+=======
+DEBUG = True
+>>>>>>> 496b5bca247b3229a4c9b01e2990654b44a11985
 SECRET_KEY = config(
     "SECRET_KEY",
     default="django-insecure-dev-key-change-in-production",
 )
+<<<<<<< HEAD
 DEBUG = config("DEBUG", default=True, cast=bool)
 ALLOWED_HOSTS = config("ALLOWED_HOSTS", default="localhost,127.0.0.1,nice-shalne-abhishekmishra-19606515.koyeb.app", cast=Csv())
+=======
+
+ALLOWED_HOSTS = [
+    "*",
+    "milddata.in",
+    "www.milddata.in",
+]
+
+CSRF_TRUSTED_ORIGINS = [
+
+    "https://milddata.in",
+]
+
+>>>>>>> 496b5bca247b3229a4c9b01e2990654b44a11985
 
 INSTALLED_APPS = [
     "django.contrib.admin",
@@ -18,7 +37,10 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+<<<<<<< HEAD
     "website_cms",
+=======
+>>>>>>> 496b5bca247b3229a4c9b01e2990654b44a11985
     "labeling",
     "products",
     "accounts",
@@ -26,16 +48,26 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
+<<<<<<< HEAD
     "mithila_ai.middleware.SecurityHeadersMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "products.middleware.RegionDetectionMiddleware",
+=======
+    "django.contrib.sessions.middleware.SessionMiddleware",
+>>>>>>> 496b5bca247b3229a4c9b01e2990654b44a11985
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
+<<<<<<< HEAD
     "accounts.middleware.GuestAccessMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
+=======
+    "django.middleware.clickjacking.XFrameOptionsMiddleware",
+     "whitenoise.middleware.WhiteNoiseMiddleware",
+
+>>>>>>> 496b5bca247b3229a4c9b01e2990654b44a11985
 ]
 
 ROOT_URLCONF = "mithila_ai.urls"
@@ -51,9 +83,12 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
+<<<<<<< HEAD
                 "accounts.context_processors.guest_status",
                 "products.context_processors.currency_context",
                 "website_cms.context_processors.cms_global_context",
+=======
+>>>>>>> 496b5bca247b3229a4c9b01e2990654b44a11985
             ],
         },
     },
@@ -61,6 +96,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "mithila_ai.wsgi.application"
 
+<<<<<<< HEAD
 # Single Central Database Configuration
 CENTRAL_DB_PATH = config("CENTRAL_DB_PATH", default=str(BASE_DIR / "db.sqlite3"))
 DATABASE_URL = config("DATABASE_URL", default="")
@@ -84,6 +120,14 @@ else:
         }
     }
 
+=======
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
+    }
+}
+>>>>>>> 496b5bca247b3229a4c9b01e2990654b44a11985
 STORAGES = {
     "default": {
         "BACKEND": "django.core.files.storage.FileSystemStorage",
@@ -92,7 +136,10 @@ STORAGES = {
         "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
     },
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 496b5bca247b3229a4c9b01e2990654b44a11985
 AUTH_PASSWORD_VALIDATORS = [
     {"NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator"},
     {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator"},
@@ -108,6 +155,7 @@ USE_TZ = True
 
 STATIC_URL = "/static/"
 STATIC_ROOT = BASE_DIR / "staticfiles"
+<<<<<<< HEAD
 STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
@@ -125,6 +173,11 @@ CSRF_COOKIE_SAMESITE = "Lax"
 SESSION_COOKIE_AGE = 7200  # 2 hours
 SESSION_EXPIRE_AT_BROWSER_CLOSE = False
 
+=======
+
+DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+>>>>>>> 496b5bca247b3229a4c9b01e2990654b44a11985
 # Email
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = config("EMAIL_HOST", default="smtp.gmail.com")

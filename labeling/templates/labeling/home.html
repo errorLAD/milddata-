@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+<<<<<<< HEAD
 {% load static %}
 
 {% block title %}B2B Data Labeling Studio — Milda Data{% endblock %}
@@ -589,10 +590,70 @@
     <span class="k">"verified_by"</span>: <span class="s">"Senior Maithili Linguist QA"</span>
   }
 }</div>
+=======
+
+{% block title %}Data Labeling — Mithila AI{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <div class="container">
+        <h1>Maithili &amp; Regional Language Data Labeling</h1>
+        <p class="lead">High-quality annotated datasets for AI teams — audio transcription, text annotation, and trilingual dataset creation.</p>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">What We Label</h2>
+        <p class="section-subtitle">Specialized data services for Maithili, Hindi, English, and other regional Indian languages.</p>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <h3>Audio Transcription</h3>
+                <p>Native-speaker transcription of Maithili and regional language audio with timestamps, speaker diarization, and quality tiers.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Text Annotation</h3>
+                <p>Named entity recognition, sentiment labeling, intent classification, and custom annotation schemas for NLP training.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Trilingual Datasets</h3>
+                <p>Parallel Maithili–Hindi–English datasets for multilingual model training, translation, and cross-lingual transfer.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Image Annotation</h3>
+                <p>Bounding boxes, segmentation, and OCR for culturally relevant visual content in regional contexts.</p>
+            </div>
         </div>
     </div>
 </section>
 
+<section class="section section-alt">
+    <div class="container">
+        <h2 class="section-title">Our Process &amp; QA</h2>
+        <p class="section-subtitle">Rigorous workflows designed for production-grade AI training data.</p>
+        <div class="process-steps">
+            <div class="process-step">
+                <h3>Scoping</h3>
+                <p>We review your requirements, define annotation guidelines, and agree on quality metrics.</p>
+            </div>
+            <div class="process-step">
+                <h3>Pilot Batch</h3>
+                <p>A small sample batch is labeled and reviewed with you before full-scale production.</p>
+            </div>
+            <div class="process-step">
+                <h3>Production</h3>
+                <p>Native annotators work in Maithili and regional languages with continuous QA checks.</p>
+            </div>
+            <div class="process-step">
+                <h3>Delivery</h3>
+                <p>Final datasets delivered in your preferred format with QA reports and inter-annotator agreement scores.</p>
+            </div>
+>>>>>>> 496b5bca247b3229a4c9b01e2990654b44a11985
+        </div>
+    </div>
+</section>
+
+<<<<<<< HEAD
 <!-- SECTION 3: PRODUCTION PIPELINE -->
 <section class="section">
     <div class="container">
@@ -623,10 +684,24 @@
                 <h3>Multi-Format Export</h3>
                 <p>Final dataset delivery in JSONL, CoNLL, WebVTT, or Parquet format complete with compliance and agreement reports.</p>
             </div>
+=======
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">Sample Output</h2>
+        <p class="section-subtitle">Example trilingual annotation format we deliver.</p>
+        <div class="sample-box">
+            <div><span class="label">id:</span> <span class="text">mtl_0042</span></div>
+            <div><span class="label">maithili:</span> <span class="text">हमर गाँव में बहुत सुंदर मिथिला पेंटिंग होइत अछि।</span></div>
+            <div><span class="label">hindi:</span> <span class="text">हमारे गाँव में बहुत सुंदर मिथिला पेंटिंग होती है।</span></div>
+            <div><span class="label">english:</span> <span class="text">There is very beautiful Mithila painting in our village.</span></div>
+            <div><span class="label">sentiment:</span> <span class="text">positive</span></div>
+            <div><span class="label">domain:</span> <span class="text">culture</span></div>
+>>>>>>> 496b5bca247b3229a4c9b01e2990654b44a11985
         </div>
     </div>
 </section>
 
+<<<<<<< HEAD
 <!-- SECTION 4: B2B QUOTE FORM -->
 <section class="section alt" id="quote-form">
     <div class="container">
@@ -637,6 +712,13 @@
         </div>
 
         <div class="quote-card">
+=======
+<section class="section section-alt" id="contact">
+    <div class="container">
+        <h2 class="section-title">Request a Quote</h2>
+        <p class="section-subtitle">Tell us about your project and we'll respond within 1–2 business days.</p>
+        <div class="form-card">
+>>>>>>> 496b5bca247b3229a4c9b01e2990654b44a11985
             <form method="post" novalidate>
                 {% csrf_token %}
                 {% for field in form %}
@@ -644,14 +726,25 @@
                     <label for="{{ field.id_for_label }}">{{ field.label }}</label>
                     {{ field }}
                     {% if field.errors %}
+<<<<<<< HEAD
                     <div class="form-error" style="color: #ef4444; font-size: 0.85rem; margin-top: -0.8rem; margin-bottom: 0.8rem;">{{ field.errors.0 }}</div>
                     {% endif %}
                 </div>
                 {% endfor %}
                 <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; padding: 1rem;">Submit Quote Request →</button>
+=======
+                    <div class="form-error">{{ field.errors.0 }}</div>
+                    {% endif %}
+                </div>
+                {% endfor %}
+                <button type="submit" class="btn btn-primary btn-block">Submit Quote Request</button>
+>>>>>>> 496b5bca247b3229a4c9b01e2990654b44a11985
             </form>
         </div>
     </div>
 </section>
+<<<<<<< HEAD
 </div>
+=======
+>>>>>>> 496b5bca247b3229a4c9b01e2990654b44a11985
 {% endblock %}

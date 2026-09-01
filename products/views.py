@@ -1,12 +1,16 @@
 import logging
+<<<<<<< HEAD
 import socket
 from decimal import Decimal
 from urllib.parse import urlparse
+=======
+>>>>>>> 496b5bca247b3229a4c9b01e2990654b44a11985
 
 import razorpay
 from django.conf import settings
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+<<<<<<< HEAD
 from django.core.mail import send_mail
 from django.http import Http404, HttpResponseBadRequest, JsonResponse
 from django.shortcuts import get_object_or_404, redirect, render
@@ -22,6 +26,14 @@ from .saas_registry import (
     get_saas_product,
     resolve_saas_url,
 )
+=======
+from django.http import HttpResponseBadRequest
+from django.shortcuts import get_object_or_404, redirect, render
+from django.urls import reverse
+from django.views.decorators.http import require_POST
+
+from .models import Order, Product
+>>>>>>> 496b5bca247b3229a4c9b01e2990654b44a11985
 
 logger = logging.getLogger(__name__)
 
@@ -32,6 +44,7 @@ def _get_razorpay_client():
     )
 
 
+<<<<<<< HEAD
 def _is_url_reachable(url, timeout=0.15):
     """Fast check if a target URL host and port are accepting TCP connections."""
     try:
@@ -323,10 +336,27 @@ def product_detail(request, pk):
             if saas_item["name"].lower() in product.name.lower() or product.name.lower() in saas_item["name"].lower():
                 return saas_detail(request, slug=slug_key)
 
+=======
+def catalog(request):
+    category = request.GET.get("category", "")
+    products = Product.objects.filter(is_active=True)
+    if category in ("ai_agent", "saas_tool"):
+        products = products.filter(category=category)
+    return render(
+        request,
+        "products/catalog.html",
+        {"products": products, "active_category": category},
+    )
+
+
+def product_detail(request, pk):
+    product = get_object_or_404(Product, pk=pk, is_active=True)
+>>>>>>> 496b5bca247b3229a4c9b01e2990654b44a11985
     razorpay_order = None
     order = None
     customer_email = request.user.email if request.user.is_authenticated else ""
 
+<<<<<<< HEAD
     region = getattr(request, "region", request.session.get("region", "IN"))
     currency = getattr(request, "currency", request.session.get("currency", "INR" if region == "IN" else "USD"))
     billing_cycle = request.POST.get("billing_cycle") or request.GET.get("billing") or request.session.get("billing_cycle", "monthly")
@@ -335,6 +365,8 @@ def product_detail(request, pk):
     subtotal, tax_amount, total_amount, tax_rate = product.get_tax_breakdown(currency=currency, billing_cycle=billing_cycle)
     display_price = product.get_display_price(currency=currency, billing_cycle=billing_cycle)
 
+=======
+>>>>>>> 496b5bca247b3229a4c9b01e2990654b44a11985
     if request.method == "POST":
         if not request.user.is_authenticated:
             login_url = reverse("accounts:login")
@@ -351,6 +383,7 @@ def product_detail(request, pk):
                 product=product,
                 user=request.user,
                 customer_email=customer_email,
+<<<<<<< HEAD
                 region=region,
                 currency=currency,
                 billing_cycle=billing_cycle,
@@ -358,22 +391,34 @@ def product_detail(request, pk):
                 tax_amount=tax_amount,
                 total_amount=total_amount,
                 amount_paid=total_amount,
+=======
+>>>>>>> 496b5bca247b3229a4c9b01e2990654b44a11985
                 payment_status="pending",
             )
             try:
                 client = _get_razorpay_client()
+<<<<<<< HEAD
                 amount_in_subunits = int(total_amount * 100)
                 razorpay_order = client.order.create(
                     {
                         "amount": amount_in_subunits,
                         "currency": currency,
+=======
+                razorpay_order = client.order.create(
+                    {
+                        "amount": product.price_in_paise,
+                        "currency": "INR",
+>>>>>>> 496b5bca247b3229a4c9b01e2990654b44a11985
                         "receipt": f"order_{order.pk}",
                         "notes": {
                             "product_id": str(product.pk),
                             "order_id": str(order.pk),
                             "customer_email": customer_email,
+<<<<<<< HEAD
                             "currency": currency,
                             "billing_cycle": billing_cycle,
+=======
+>>>>>>> 496b5bca247b3229a4c9b01e2990654b44a11985
                         },
                     }
                 )
@@ -399,6 +444,7 @@ def product_detail(request, pk):
             "razorpay_order": razorpay_order,
             "customer_email": customer_email,
             "razorpay_key_id": settings.RAZORPAY_KEY_ID,
+<<<<<<< HEAD
             "display_price": display_price,
             "subtotal": subtotal,
             "tax_amount": tax_amount,
@@ -406,6 +452,8 @@ def product_detail(request, pk):
             "tax_rate": tax_rate,
             "active_currency": currency,
             "billing_cycle": billing_cycle,
+=======
+>>>>>>> 496b5bca247b3229a4c9b01e2990654b44a11985
         },
     )
 
@@ -471,6 +519,7 @@ def payment_success(request):
 def my_orders(request):
     orders = Order.objects.filter(user=request.user, payment_status="paid")
     return render(request, "products/my_orders.html", {"orders": orders})
+<<<<<<< HEAD
 
 
 @csrf_exempt
@@ -550,3 +599,5 @@ def book_demo(request):
         "success": True,
         "message": f"Thank you {full_name}! Your demo request for {product_name} has been sent to our sales team (ab.mishra@yahoo.com). We will reach out shortly."
     })
+=======
+>>>>>>> 496b5bca247b3229a4c9b01e2990654b44a11985

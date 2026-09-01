@@ -3,6 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+<<<<<<< HEAD
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <meta name="theme-color" content="#0b0f1a">
     <meta name="mobile-web-app-capable" content="yes">
@@ -110,11 +111,29 @@
         top: 0;
         z-index: 100;
         box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+=======
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Mithila AI{% endblock %}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+<style>
+    .site-header {
+        background: #ffffff;
+        border-bottom: 1px solid #e5e7eb;
+    }
+    .logo-img {
+        height: 50px;
+        width: auto;
+        display: block;
+>>>>>>> 496b5bca247b3229a4c9b01e2990654b44a11985
     }
     .header-inner {
         display: flex;
         align-items: center;
         justify-content: space-between;
+<<<<<<< HEAD
         padding: 0.75rem 1.5rem;
     }
     .logo {
@@ -137,10 +156,21 @@
         cursor: pointer;
         padding: 0.25rem 0.5rem;
         color: #0f172a;
+=======
+    }
+    .nav-toggle {
+        display: none;
+        color: #1f2937;
+        background: transparent;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+>>>>>>> 496b5bca247b3229a4c9b01e2990654b44a11985
     }
     .nav-links {
         display: flex;
         align-items: center;
+<<<<<<< HEAD
         gap: 1.1rem;
         flex-wrap: wrap;
     }
@@ -159,6 +189,22 @@
     .nav-products {
         font-weight: 700;
         color: #2563eb !important;
+=======
+        gap: 24px;
+    }
+    .nav-links a {
+        color: #1f2937;
+        text-decoration: none;
+    }
+    .nav-links a:hover {
+        color: #4f46e5;
+    }
+
+    /* Highlighted "Products" link */
+    .nav-products {
+        font-weight: 700;
+        color: #4f46e5 !important;
+>>>>>>> 496b5bca247b3229a4c9b01e2990654b44a11985
         position: relative;
     }
     .nav-products::after {
@@ -168,6 +214,7 @@
         bottom: -4px;
         width: 100%;
         height: 2px;
+<<<<<<< HEAD
         background: #2563eb;
         border-radius: 2px;
     }
@@ -220,6 +267,44 @@
         .top-control-inner {
             justify-content: center;
         }
+=======
+        background: #4f46e5;
+        border-radius: 2px;
+    }
+
+    .nav-user {
+        color: #1f2937;
+    }
+
+    /* Highlighted "Sign Up" button */
+    .nav-signup {
+        background: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
+        background-size: 200% 200%;
+        color: #ffffff !important;
+        padding: 10px 24px;
+        border-radius: 9999px;
+        font-weight: 700;
+        letter-spacing: 0.3px;
+        position: relative;
+        box-shadow: 0 4px 14px rgba(168, 85, 247, 0.45);
+        transition: transform 0.2s ease, box-shadow 0.2s ease, background-position 0.4s ease;
+        animation: signupGradientShift 4s ease infinite;
+    }
+    .nav-signup:hover {
+        color: #ffffff !important;
+        transform: translateY(-2px) scale(1.04);
+        box-shadow: 0 8px 22px rgba(236, 72, 153, 0.55);
+        background-position: 100% 50%;
+    }
+    @keyframes signupGradientShift {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+
+    /* Mobile: hide the nav row, show the hamburger */
+    @media (max-width: 768px) {
+>>>>>>> 496b5bca247b3229a4c9b01e2990654b44a11985
         .nav-toggle {
             display: block;
         }
@@ -227,25 +312,41 @@
             display: none;
             flex-direction: column;
             align-items: flex-start;
+<<<<<<< HEAD
             gap: 14px;
+=======
+            gap: 12px;
+>>>>>>> 496b5bca247b3229a4c9b01e2990654b44a11985
             position: absolute;
             top: 100%;
             left: 0;
             right: 0;
             background: #ffffff;
+<<<<<<< HEAD
             padding: 20px 24px;
             border-bottom: 1px solid #e2e8f0;
             box-shadow: 0 10px 25px rgba(0,0,0,0.1);
             z-index: 999;
+=======
+            padding: 16px 24px;
+            border-bottom: 1px solid #e5e7eb;
+>>>>>>> 496b5bca247b3229a4c9b01e2990654b44a11985
         }
         .nav-links.open {
             display: flex;
         }
+<<<<<<< HEAD
+=======
+        .site-header {
+            position: relative;
+        }
+>>>>>>> 496b5bca247b3229a4c9b01e2990654b44a11985
     }
 </style>
     {% block extra_head %}{% endblock %}
 </head>
 <body>
+<<<<<<< HEAD
     <!-- Top Utility & Regional Pricing Bar -->
     <div class="top-control-bar">
         <div class="container top-control-inner">
@@ -302,6 +403,21 @@
                 {% endif %}
                 <span class="user-pill">👤 {{ user.email }}</span>
                 <a href="{% url 'accounts:logout' %}" style="color: #ef4444;">Log Out</a>
+=======
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="{% url 'home' %}" class="logo">
+                <img src="https://i.postimg.cc/43gxKLrL/6e2fd4bb-c219-46d7-a5a3-21d4df5b9461.png" alt="Mithila AI" class="logo-img">
+            </a>
+            <button class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">☰</button>
+            <nav class="nav-links" role="navigation">
+                <a href="{% url 'labeling:home' %}">Data Labeling</a>
+                <a href="{% url 'products:catalog' %}" class="nav-products">SAAS/AI STORE</a>
+                {% if user.is_authenticated %}
+                <a href="{% url 'products:my_orders' %}">My Orders</a>
+                <span class="nav-user">{{ user.email }}</span>
+                <a href="{% url 'accounts:logout' %}">Log Out</a>
+>>>>>>> 496b5bca247b3229a4c9b01e2990654b44a11985
                 {% else %}
                 <a href="{% url 'accounts:login' %}">Log In</a>
                 <a href="{% url 'accounts:signup' %}" class="nav-signup">Sign Up</a>
@@ -311,7 +427,11 @@
     </header>
 
     {% if messages %}
+<<<<<<< HEAD
     <div class="container messages" style="margin-top: 1rem;">
+=======
+    <div class="container messages">
+>>>>>>> 496b5bca247b3229a4c9b01e2990654b44a11985
         {% for message in messages %}
         <div class="alert alert-{{ message.tags }}">{{ message }}</div>
         {% endfor %}
@@ -322,6 +442,7 @@
         {% block content %}{% endblock %}
     </main>
 
+<<<<<<< HEAD
     <footer class="site-footer" style="background: #0f172a; color: #94a3b8; padding: 3rem 0 2rem; border-top: 1px solid #1e293b; margin-top: 4rem;">
         <div class="container">
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
@@ -397,5 +518,26 @@
     });
     </script>
     {% block extra_js %}{% endblock %}
+=======
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; {% now "Y" %} Mithila AI. Maithili &amp; regional language AI solutions.</p>
+        </div>
+    </footer>
+
+    {% block extra_js %}
+    <script>
+    document.addEventListener('DOMContentLoaded', function(){
+        var btn = document.querySelector('.nav-toggle');
+        var nav = document.querySelector('.nav-links');
+        if (!btn || !nav) return;
+        btn.addEventListener('click', function(){
+            var open = nav.classList.toggle('open');
+            btn.setAttribute('aria-expanded', open);
+        });
+    });
+    </script>
+    {% endblock %}
+>>>>>>> 496b5bca247b3229a4c9b01e2990654b44a11985
 </body>
 </html>

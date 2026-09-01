@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from django.contrib.auth import get_user_model
 from django.test import TestCase, override_settings
 from django.urls import reverse
@@ -77,3 +78,8 @@ class GuestAccessAndSecurityTests(TestCase):
         self.assertEqual(response["X-Frame-Options"], "DENY")
         self.assertEqual(response["Referrer-Policy"], "strict-origin-when-cross-origin")
         self.assertIn("Content-Security-Policy", response)
+=======
+from django.test import TestCase
+
+# Create your tests here.
+>>>>>>> 496b5bca247b3229a4c9b01e2990654b44a11985
