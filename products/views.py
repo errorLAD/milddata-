@@ -1,39 +1,20 @@
 import logging
-<<<<<<< HEAD
 import socket
 from decimal import Decimal
 from urllib.parse import urlparse
-=======
->>>>>>> 496b5bca247b3229a4c9b01e2990654b44a11985
 
 import razorpay
 from django.conf import settings
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-<<<<<<< HEAD
 from django.core.mail import send_mail
-from django.http import Http404, HttpResponseBadRequest, JsonResponse
+from django.http import HttpResponseBadRequest, JsonResponse
 from django.shortcuts import get_object_or_404, redirect, render
-from django.urls import reverse
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_POST
 
 from .models import DemoLead, Order, Product
-from .saas_registry import (
-    SAAS_PRODUCTS,
-    SLUG_ALIASES,
-    get_all_saas_products,
-    get_saas_product,
-    resolve_saas_url,
-)
-=======
-from django.http import HttpResponseBadRequest
-from django.shortcuts import get_object_or_404, redirect, render
-from django.urls import reverse
-from django.views.decorators.http import require_POST
-
-from .models import Order, Product
->>>>>>> 496b5bca247b3229a4c9b01e2990654b44a11985
+from .saas_registry import SAAS_PRODUCTS, SLUG_ALIASES, get_all_saas_products, get_saas_product, resolve_saas_url
 
 logger = logging.getLogger(__name__)
 
@@ -44,7 +25,6 @@ def _get_razorpay_client():
     )
 
 
-<<<<<<< HEAD
 def _is_url_reachable(url, timeout=0.15):
     """Fast check if a target URL host and port are accepting TCP connections."""
     try:
@@ -336,27 +316,10 @@ def product_detail(request, pk):
             if saas_item["name"].lower() in product.name.lower() or product.name.lower() in saas_item["name"].lower():
                 return saas_detail(request, slug=slug_key)
 
-=======
-def catalog(request):
-    category = request.GET.get("category", "")
-    products = Product.objects.filter(is_active=True)
-    if category in ("ai_agent", "saas_tool"):
-        products = products.filter(category=category)
-    return render(
-        request,
-        "products/catalog.html",
-        {"products": products, "active_category": category},
-    )
-
-
-def product_detail(request, pk):
-    product = get_object_or_404(Product, pk=pk, is_active=True)
->>>>>>> 496b5bca247b3229a4c9b01e2990654b44a11985
     razorpay_order = None
     order = None
     customer_email = request.user.email if request.user.is_authenticated else ""
 
-<<<<<<< HEAD
     region = getattr(request, "region", request.session.get("region", "IN"))
     currency = getattr(request, "currency", request.session.get("currency", "INR" if region == "IN" else "USD"))
     billing_cycle = request.POST.get("billing_cycle") or request.GET.get("billing") or request.session.get("billing_cycle", "monthly")
@@ -365,95 +328,61 @@ def product_detail(request, pk):
     subtotal, tax_amount, total_amount, tax_rate = product.get_tax_breakdown(currency=currency, billing_cycle=billing_cycle)
     display_price = product.get_display_price(currency=currency, billing_cycle=billing_cycle)
 
-=======
->>>>>>> 496b5bca247b3229a4c9b01e2990654b44a11985
     if request.method == "POST":
-        if not request.user.is_authenticated:
-            login_url = reverse("accounts:login")
-            return redirect(f"{login_url}?next={request.path}")
-
-        customer_email = request.user.email
-        if not settings.RAZORPAY_KEY_ID or not settings.RAZORPAY_KEY_SECRET:
-            messages.error(
-                request,
-                "Payment is not configured yet. Please contact support.",
-            )
-        else:
+        customer_email = request.POST.get("email", customer_email)
+        if customer_email:
             order = Order.objects.create(
                 product=product,
-                user=request.user,
+                user=request.user if request.user.is_authenticated else None,
                 customer_email=customer_email,
-<<<<<<< HEAD
                 region=region,
                 currency=currency,
                 billing_cycle=billing_cycle,
                 subtotal_amount=subtotal,
                 tax_amount=tax_amount,
                 total_amount=total_amount,
-                amount_paid=total_amount,
-=======
->>>>>>> 496b5bca247b3229a4c9b01e2990654b44a11985
                 payment_status="pending",
             )
             try:
                 client = _get_razorpay_client()
-<<<<<<< HEAD
                 amount_in_subunits = int(total_amount * 100)
                 razorpay_order = client.order.create(
                     {
                         "amount": amount_in_subunits,
                         "currency": currency,
-=======
-                razorpay_order = client.order.create(
-                    {
-                        "amount": product.price_in_paise,
-                        "currency": "INR",
->>>>>>> 496b5bca247b3229a4c9b01e2990654b44a11985
                         "receipt": f"order_{order.pk}",
                         "notes": {
                             "product_id": str(product.pk),
                             "order_id": str(order.pk),
                             "customer_email": customer_email,
-<<<<<<< HEAD
                             "currency": currency,
                             "billing_cycle": billing_cycle,
-=======
->>>>>>> 496b5bca247b3229a4c9b01e2990654b44a11985
                         },
                     }
                 )
                 order.razorpay_order_id = razorpay_order["id"]
-                order.save(update_fields=["razorpay_order_id"])
-            except Exception:
-                logger.exception("Failed to create Razorpay order")
-                order.payment_status = "failed"
-                order.save(update_fields=["payment_status"])
-                messages.error(
-                    request,
-                    "Could not initiate payment. Please try again later.",
-                )
-                order = None
-                razorpay_order = None
+                order.save()
+            except Exception as e:
+                messages.error(request, f"Payment initialization failed: {e}")
 
     return render(
         request,
         "products/detail.html",
         {
             "product": product,
-            "order": order,
-            "razorpay_order": razorpay_order,
-            "customer_email": customer_email,
+            "razorpay_order_id": razorpay_order["id"] if razorpay_order else "",
             "razorpay_key_id": settings.RAZORPAY_KEY_ID,
-<<<<<<< HEAD
-            "display_price": display_price,
+            "amount_in_subunits": int(total_amount * 100) if order else 0,
+            "order": order,
+            "customer_email": customer_email,
+            "region": region,
+            "currency": currency,
+            "billing_cycle": billing_cycle,
             "subtotal": subtotal,
             "tax_amount": tax_amount,
             "total_amount": total_amount,
             "tax_rate": tax_rate,
-            "active_currency": currency,
-            "billing_cycle": billing_cycle,
-=======
->>>>>>> 496b5bca247b3229a4c9b01e2990654b44a11985
+            "display_price": display_price,
         },
     )
 
@@ -514,12 +443,6 @@ def payment_success(request):
     )
     return render(request, "products/success.html", {"order": order})
 
-
-@login_required
-def my_orders(request):
-    orders = Order.objects.filter(user=request.user, payment_status="paid")
-    return render(request, "products/my_orders.html", {"orders": orders})
-<<<<<<< HEAD
 
 
 @csrf_exempt
@@ -599,5 +522,3 @@ def book_demo(request):
         "success": True,
         "message": f"Thank you {full_name}! Your demo request for {product_name} has been sent to our sales team (ab.mishra@yahoo.com). We will reach out shortly."
     })
-=======
->>>>>>> 496b5bca247b3229a4c9b01e2990654b44a11985

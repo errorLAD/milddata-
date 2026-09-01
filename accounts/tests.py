@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 from django.contrib.auth import get_user_model
 from django.test import TestCase, override_settings
 from django.urls import reverse
@@ -45,10 +44,10 @@ class GuestAccessAndSecurityTests(TestCase):
     def test_guest_restricted_action_enforced_server_side(self):
         self.client.get(reverse("accounts:guest_login"))
 
-        # Guest trying to view my orders -> restricted & redirected to login
-        orders_res = self.client.get(reverse("products:my_orders"))
-        self.assertEqual(orders_res.status_code, 302)
-        self.assertIn(reverse("accounts:login"), orders_res.url)
+        # Guest trying to view admin -> restricted & redirected to login
+        admin_res = self.client.get("/admin/dashboard/")
+        self.assertEqual(admin_res.status_code, 302)
+        self.assertIn(reverse("accounts:login"), admin_res.url)
 
         # Guest trying to POST purchase -> restricted & redirected to login
         detail_url = reverse("products:detail", kwargs={"pk": self.product.pk})
@@ -78,8 +77,3 @@ class GuestAccessAndSecurityTests(TestCase):
         self.assertEqual(response["X-Frame-Options"], "DENY")
         self.assertEqual(response["Referrer-Policy"], "strict-origin-when-cross-origin")
         self.assertIn("Content-Security-Policy", response)
-=======
-from django.test import TestCase
-
-# Create your tests here.
->>>>>>> 496b5bca247b3229a4c9b01e2990654b44a11985

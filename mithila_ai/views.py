@@ -1,5 +1,4 @@
 from django.shortcuts import render
-<<<<<<< HEAD
 from products.saas_registry import get_all_saas_products
 from website_cms.models import (
     FAQ,
@@ -39,9 +38,3 @@ def home(request):
             "cms_faqs": cms_faqs,
         },
     )
-=======
-
-
-def home(request):
-    return render(request, "home.html")
->>>>>>> 496b5bca247b3229a4c9b01e2990654b44a11985

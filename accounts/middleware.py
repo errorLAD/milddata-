@@ -35,7 +35,6 @@ class GuestAccessMiddleware:
             # Strictly enforce server-side restrictions on protected paths/methods
             restricted_paths = [
                 "/admin/",
-                "/products/my-orders/",
                 "/products/payment/",
             ]
             

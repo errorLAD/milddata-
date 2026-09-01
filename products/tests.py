@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 from decimal import Decimal
 from unittest.mock import patch
 from django.contrib.auth import get_user_model
@@ -119,8 +118,3 @@ class SaaSDirectoryTests(TestCase):
             response = self.client.get(url)
             self.assertEqual(response.status_code, 302)
             self.assertTrue(response.url.startswith(item["default_url"]))
-=======
-from django.test import TestCase
-
-# Create your tests here.
->>>>>>> 496b5bca247b3229a4c9b01e2990654b44a11985

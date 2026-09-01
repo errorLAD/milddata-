@@ -1,7 +1,4 @@
-<<<<<<< HEAD
 from decimal import Decimal
-=======
->>>>>>> 496b5bca247b3229a4c9b01e2990654b44a11985
 from django.conf import settings
 from django.db import models
 
@@ -14,10 +11,7 @@ class Product(models.Model):
     BILLING_TYPE_CHOICES = [
         ("one_time", "One-time"),
         ("monthly", "Monthly"),
-<<<<<<< HEAD
         ("yearly", "Yearly"),
-=======
->>>>>>> 496b5bca247b3229a4c9b01e2990654b44a11985
     ]
 
     name = models.CharField(max_length=200)
@@ -27,7 +21,6 @@ class Product(models.Model):
         help_text="One feature per line",
     )
     category = models.CharField(max_length=20, choices=CATEGORY_CHOICES)
-<<<<<<< HEAD
     
     # Base fallback prices
     price = models.DecimalField(max_digits=10, decimal_places=2, default=199.00, help_text="Base Price (INR)")
@@ -44,10 +37,6 @@ class Product(models.Model):
     vat_tax_rate = models.DecimalField(max_digits=5, decimal_places=2, default=0.00, help_text="International Tax/VAT Rate (%)")
 
     billing_type = models.CharField(max_length=20, choices=BILLING_TYPE_CHOICES, default="monthly")
-=======
-    price = models.DecimalField(max_digits=10, decimal_places=2)
-    billing_type = models.CharField(max_length=20, choices=BILLING_TYPE_CHOICES)
->>>>>>> 496b5bca247b3229a4c9b01e2990654b44a11985
     access_info = models.TextField(
         blank=True,
         help_text="Shown to customer after successful payment",
@@ -66,7 +55,6 @@ class Product(models.Model):
             return []
         return [f.strip() for f in self.features.splitlines() if f.strip()]
 
-<<<<<<< HEAD
     def get_price_amount(self, currency="INR", billing_cycle="monthly"):
         """Get exact numeric price based on currency (INR/USD) and billing cycle (monthly/yearly)."""
         cycle = billing_cycle.lower() if billing_cycle in ("monthly", "yearly") else "monthly"
@@ -108,16 +96,6 @@ class Product(models.Model):
     @property
     def price_in_paise(self):
         return int(self.price_inr_monthly * 100)
-=======
-    @property
-    def price_display(self):
-        suffix = "/mo" if self.billing_type == "monthly" else ""
-        return f"₹{self.price:,.0f}{suffix}"
-
-    @property
-    def price_in_paise(self):
-        return int(self.price * 100)
->>>>>>> 496b5bca247b3229a4c9b01e2990654b44a11985
 
 
 class Order(models.Model):
@@ -126,13 +104,10 @@ class Order(models.Model):
         ("paid", "Paid"),
         ("failed", "Failed"),
     ]
-<<<<<<< HEAD
     BILLING_CYCLE_CHOICES = [
         ("monthly", "Monthly"),
         ("yearly", "Yearly"),
     ]
-=======
->>>>>>> 496b5bca247b3229a4c9b01e2990654b44a11985
 
     product = models.ForeignKey(Product, on_delete=models.PROTECT, related_name="orders")
     user = models.ForeignKey(
@@ -143,7 +118,6 @@ class Order(models.Model):
         blank=True,
     )
     customer_email = models.EmailField()
-<<<<<<< HEAD
     region = models.CharField(max_length=10, default="IN")
     currency = models.CharField(max_length=10, default="INR")
     billing_cycle = models.CharField(max_length=10, choices=BILLING_CYCLE_CHOICES, default="monthly")
@@ -153,9 +127,7 @@ class Order(models.Model):
     tax_amount = models.DecimalField(max_digits=10, decimal_places=2, default=0.00)
     total_amount = models.DecimalField(max_digits=10, decimal_places=2, default=0.00)
     amount_paid = models.DecimalField(max_digits=10, decimal_places=2, default=0.00)
-    
-=======
->>>>>>> 496b5bca247b3229a4c9b01e2990654b44a11985
+
     razorpay_order_id = models.CharField(max_length=100, blank=True)
     razorpay_payment_id = models.CharField(max_length=100, blank=True)
     payment_status = models.CharField(
@@ -169,7 +141,6 @@ class Order(models.Model):
         ordering = ["-created_at"]
 
     def __str__(self):
-<<<<<<< HEAD
         return f"Order #{self.pk} — {self.product.name} ({self.currency} {self.total_amount} {self.payment_status})"
 
 
@@ -187,6 +158,3 @@ class DemoLead(models.Model):
 
     def __str__(self):
         return f"Demo Lead: {self.full_name} ({self.product_name}) - {self.place}"
-=======
-        return f"Order #{self.pk} — {self.product.name} ({self.payment_status})"
->>>>>>> 496b5bca247b3229a4c9b01e2990654b44a11985
